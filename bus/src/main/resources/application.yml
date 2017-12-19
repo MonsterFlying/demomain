@@ -1,0 +1,10 @@
+spring:
+  rabbitmq:
+    addresses: localhost
+    host: 5672
+    username: gofobao
+    password: gofobao
+
+
+order:
+   name: My Name's Order Service,Are you Afraid?123

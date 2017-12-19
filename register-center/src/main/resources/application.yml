@@ -1,0 +1,21 @@
+server:
+    port: 8001
+spring:
+    application:
+      name: server
+eureka:
+    instance:
+      hostname: server
+    client:
+      fetch-registry: false
+      register-with-eureka: false
+      service-url:
+        defaultZone: http://wangguo:wangguo@${eureka.instance.hostname}:${server.port}/eureka/
+    server:
+      enable-self-preservation: false
+security:
+    basic:
+      enabled: true
+    user:
+      name: wangguo
+      password: wangguo
