@@ -1,0 +1,19 @@
+eureka:
+  instance:
+    prefer-ip-address: false
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+server:
+  port: 8020
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/MonsterFlying/demomain.git
+          username: MonsterFlying
+          password: wangguo147
+          search-paths: config
