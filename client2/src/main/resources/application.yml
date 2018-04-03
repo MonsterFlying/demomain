@@ -1,5 +1,5 @@
 server:
-  port: 8003
+  port: 8006
 spring:
   application:
     name: provider-user
@@ -22,11 +22,12 @@ spring:
 eureka:
   client:
     service-url:
-       defaultZone: http://localhost:8001/eureka/
+       defaultZone: http://localhost:8001/eureka/,http://localhost:8002/eureka/,http://localhost:8003/eureka/
   instance:
     lease-expiration-duration-in-seconds: 30
     lease-renewal-interval-in-seconds: 30
     hostname: provider-user
+
 
 battcn:
   security:

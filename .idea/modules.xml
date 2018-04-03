@@ -10,6 +10,8 @@
       <module fileurl="file://$PROJECT_DIR$/feign/feign.iml" filepath="$PROJECT_DIR$/feign/feign.iml" />
       <module fileurl="file://$PROJECT_DIR$/hystrix/hystrix.iml" filepath="$PROJECT_DIR$/hystrix/hystrix.iml" />
       <module fileurl="file://$PROJECT_DIR$/register-center/register-center.iml" filepath="$PROJECT_DIR$/register-center/register-center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/register1/register1.iml" filepath="$PROJECT_DIR$/register1/register1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/register2/register2.iml" filepath="$PROJECT_DIR$/register2/register2.iml" />
       <module fileurl="file://$PROJECT_DIR$/zuul/zuul.iml" filepath="$PROJECT_DIR$/zuul/zuul.iml" />
     </modules>
   </component>

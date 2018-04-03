@@ -1,15 +1,15 @@
 server:
-  port: 8003
+  port: 8001
 spring:
   application:
-    name: server3
+    name: server1
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://localhost:8001/eureka/,http://localhost:8002/eureka/
+      defaultZone: http://localhost:8002/eureka/,http://localhost:8003/eureka/
   instance:
-    hostname: register3
+    hostname: register1
   server:
     enable-self-preservation: true

@@ -1,0 +1,15 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: server2
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8001/eureka/,http://localhost:8003/eureka/
+  instance:
+    hostname: register2
+  server:
+    enable-self-preservation: true

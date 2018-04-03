@@ -1,20 +1,14 @@
-package com.example.demo;
+package com.example.register1;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
-/**
- * @author wangguo
- */
-
-@EnableEurekaServer
 @SpringBootApplication
-public class ServerApplication {
+@EnableEurekaServer
+public class Register1Application {
 
     public static void main(String[] args) {
-        new SpringApplicationBuilder(ServerApplication.class).run(args);
+        new SpringApplicationBuilder(Register1Application.class).run(args);
     }
-
-
 }
