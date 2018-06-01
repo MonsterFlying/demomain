@@ -3,17 +3,19 @@ server:
 eureka:
     client:
       service-url:
-         defaultZone: http://localhost:8002/eureka/,http://localhost:8003/eureka/,http://localhost:8001/eureka/
-    instance:
-      prefer-ip-address: true
+         defaultZone: http://localhost:8081/eureka/,http://localhost:8001/eureka/
 spring:
     application:
       name: service-zuul
 zuul:
     routes:
-      api-contract: # 其中api-contract是路由名称，可以随便定义，但是path和service-id需要一一对应
-        path: /user/**
-        service-id: test-feign    #springboot-rest-template-feign为注册到Eureka上的服务名
+     # api-user: # 其中api-contract是路由名称，可以随便定义，但是path和service-id需要一一对应
+       # path: /user/**
+       # service-id: provider-user    #springboot-rest-template-feign为注册到Eureka上的服务名
+       # stripPrefix: false
+      api-orders:
+        path: /order/**
+        service-id: order-provider1
         stripPrefix: false
 ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule # 配置服务端负载均衡策略

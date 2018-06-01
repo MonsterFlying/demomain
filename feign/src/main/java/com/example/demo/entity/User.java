@@ -1,9 +1,14 @@
 package com.example.demo.entity;
 
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+/**
+ * @author wangguo
+ */
+@Setter
+@Getter
 public class User {
 
     private Long id;
@@ -12,4 +17,13 @@ public class User {
 
     private Integer age;
 
+
+    public User(Long id, String userName, Integer age) {
+        this.id = id;
+        this.userName = userName;
+        this.age = age;
+    }
+
+    public User() {
+    }
 }

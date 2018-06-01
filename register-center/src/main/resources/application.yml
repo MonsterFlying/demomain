@@ -2,14 +2,22 @@ server:
   port: 8003
 spring:
   application:
-    name: server3
+    name: server-c
 eureka:
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8001/eureka/,http://localhost:8002/eureka/
+      defaultZone: http://wangguo:wangguo@registerA:8001/eureka/,http://wangguo:wangguo@registerB:8002/eureka/
   instance:
-    hostname: register3
+    hostname: registerC
   server:
-    enable-self-preservation: true
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000
+
+security:
+  user:
+    password: wangguo
+    name: wangguo
+  basic:
+    enabled: true

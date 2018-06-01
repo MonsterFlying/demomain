@@ -4,17 +4,18 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpStatus;
+import org.springframework.cloud.netflix.zuul.util.RequestUtils;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @author wangguo
+ */
 @Slf4j
 public class TestFilter extends ZuulFilter {
     @Override
     public String filterType() {
-
-
-
         return "pre";
     }
 
@@ -30,6 +31,8 @@ public class TestFilter extends ZuulFilter {
 
     @Override
     public Object run() {
+        System.out.println("44444444444444");
+
         RequestContext requestContent = RequestContext.getCurrentContext();
         HttpServletRequest httpServletRequest = requestContent.getRequest();
         String token = httpServletRequest.getParameter("token");

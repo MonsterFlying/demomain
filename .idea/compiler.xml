@@ -10,15 +10,19 @@
         <module name="client1" />
         <module name="client2" />
         <module name="config" />
-        <module name="demomain" />
+        <module name="consul" />
         <module name="eureka_server" />
         <module name="feign" />
         <module name="hystrix" />
+        <module name="order1" />
+        <module name="order2" />
+        <module name="rabbion" />
         <module name="register-center" />
         <module name="register1" />
         <module name="register2" />
         <module name="ribbon" />
         <module name="server" />
+        <module name="test-regsiter" />
         <module name="userService" />
         <module name="zuul" />
       </profile>
@@ -29,18 +33,27 @@
       <module name="client1" target="1.8" />
       <module name="client2" target="1.8" />
       <module name="config" target="1.8" />
+      <module name="consul" target="1.8" />
       <module name="demo" target="1.8" />
-      <module name="demomain" target="1.8" />
+      <module name="demomain" target="1.5" />
       <module name="eureka_server" target="1.8" />
       <module name="feign" target="1.8" />
       <module name="hystrix" target="1.8" />
+      <module name="oauth2" target="1.8" />
+      <module name="order1" target="1.8" />
+      <module name="order2" target="1.8" />
+      <module name="rabbion" target="1.8" />
       <module name="register-center" target="1.8" />
       <module name="register1" target="1.8" />
       <module name="register2" target="1.8" />
       <module name="ribbon" target="1.8" />
       <module name="server" target="1.8" />
       <module name="server2" target="1.8" />
+      <module name="tesdemo" target="1.8" />
       <module name="test" target="1.8" />
+      <module name="test-regsiter" target="1.8" />
+      <module name="test-zuul" target="1.8" />
+      <module name="txmanager" target="1.8" />
       <module name="userService" target="1.8" />
       <module name="zuul" target="1.8" />
     </bytecodeTargetLevel>

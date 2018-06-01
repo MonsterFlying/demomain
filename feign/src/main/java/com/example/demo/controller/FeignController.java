@@ -1,14 +1,11 @@
 package com.example.demo.controller;
 
-import com.example.demo.depend.UserClient;
+import com.example.demo.depend.CityFeign;
+import com.example.demo.depend.UserFeign;
 import com.example.demo.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
@@ -17,17 +14,28 @@ public class FeignController {
 
 
     @Autowired
-    private UserClient userClient;
+    private UserFeign userFeign;
+
+    @Autowired
+    private CityFeign cityFeign;
 
     @GetMapping("/{id}")
     public User findById(@PathVariable("id") Long id) {
-        User user = this.userClient.findById(id);
+        User user = this.userFeign.findById(id);
         return user;
     }
 
     @GetMapping("/list")
     public List<User> list() {
-        return this.userClient.list();
+        return this.userFeign.list();
+    }
+
+    @PutMapping("/add")
+    public boolean add(@ModelAttribute User user) {
+        cityFeign.add();
+        userFeign.add(user);
+        int s = 100 % 0;
+        return true;
     }
 }
 

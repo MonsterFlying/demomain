@@ -1,0 +1,16 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: test-register
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+  server:
+    enable-self-preservation: true
+    eviction-interval-timer-in-ms: 5000
+
+

@@ -1,19 +1,30 @@
 package com.example.demo.entity;
-import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Setter
+@Getter
 @Entity
-@Data
+@Table(name = "user")
 public class User {
     @Id
+    @GeneratedValue
     private Long id;
 
-    @Column(name = "username")
+    @Column(name = "name")
     private String userName;
 
     private Integer age;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+
+    @JsonIgnoreProperties(value = { "user" })
+    private List<UserCity> cities=new ArrayList<>(0);
 
 }

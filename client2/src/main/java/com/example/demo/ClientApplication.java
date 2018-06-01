@@ -1,29 +1,22 @@
 package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
-@SpringBootApplication
+/**
+ * @author wangguo
+ */
 @EnableEurekaClient
-@RestController
+@SpringBootApplication
+@EnableFeignClients(basePackages = "com.example.demo")
 public class ClientApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ClientApplication.class, args);
-	}
-
-	@RequestMapping("/hello")
-	public String hello() {
-
-		return "hi";
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ClientApplication.class, args);
+    }
 
 
-	@RequestMapping("/test")
-	public String test(){
-		return "test";
-	}
 }

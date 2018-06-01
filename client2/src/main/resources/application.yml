@@ -2,41 +2,40 @@ server:
   port: 8006
 spring:
   application:
-    name: provider-user
+    name: city
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    username: root
+    password: gt123456
+    url: jdbc:mysql://113.106.202.51:3306/tx_db1?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&&useSSL=true
+    driver-class-name: com.mysql.jdbc.Driver
+    #type: com.zaxxer.hikari.HikariDataSource
   jpa:
-    generate-ddl: false
     hibernate:
       ddl-auto: none
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    database: mysql
     show-sql: true
-  datasource:
-    platform: h2
-    schema: classpath:schema.sql
-    data: classpath:data.sql
-  logging:
-    level:
-      root: INFO
-      org.hibernate: INFO
-      org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-      org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-      com.itmuch.youran.persistence: ERROR
+    properties:
+      hibernate:
+        dialect : org.hibernate.dialect.MySQL5Dialect
+        enable_lazy_load_no_trans: true
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.itmuch.youran.persistence: ERROR
+feign:
+  hystrix:
+    enabled: true
 eureka:
   client:
     service-url:
-       defaultZone: http://localhost:8001/eureka/,http://localhost:8002/eureka/,http://localhost:8003/eureka/
-  instance:
+       defaultZone: http://localhost:8001/eureka/
     lease-expiration-duration-in-seconds: 30
     lease-renewal-interval-in-seconds: 30
-    hostname: provider-user
-
-
-battcn:
-  security:
-    token:
-      expiration-time:  10 # 分钟 1440
-      refresh-exp-time: 30 # 分钟 2880
-      issuer: http://www.gofobao.com
-      signing-key: battcn
-
-
-
-
+txmanager:
+  url: http://127.0.0.1:8899/tx/manager/

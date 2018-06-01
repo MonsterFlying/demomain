@@ -1,0 +1,12 @@
+spring:
+              cloud:
+                consul:
+                  host: localhost  #consul地址
+                  port: 8500   #端口
+                  discovery:
+                    service-name: appliction1  #本服务名
+                    instance-id: testId   #本服务唯一id
+              application:
+                name: consul-order
+            server:
+              port: 8084
